@@ -116,5 +116,5 @@ def driver_change_status(request: HttpRequest, pk: int) -> HttpResponse:
     else:
         car.drivers.add(driver)
 
-    url = reverse("car-detail", kwargs={"pk": car.pk})
+    url = reverse("taxi:car-detail", kwargs={"pk": car.pk})
     return redirect(url)

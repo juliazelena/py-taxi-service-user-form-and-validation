@@ -12,7 +12,7 @@
           <li>{{ driver.username }} ({{ driver.first_name }} {{ driver.last_name }})</li>
         {% endfor %}
       </ul>
-    <form method="post" action="{% url 'taxi:driver-change-status' pk=car.id %}">
+    <form method="post" action="{% url 'taxi:driver-change-status' pk=object.id %}">
         {% csrf_token %}
         {% if user in car.drivers.all %}
             <button type="submit" class="btn btn-warning">Delete me from this car</button>
